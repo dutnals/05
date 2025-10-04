@@ -6,15 +6,17 @@
 int main(int argc, char *argv[]) {
 	
 	int x;
+	int i;
+	int sum=0;
+	
 	printf("정수를 입력하세요: ");
 	scanf("%d", &x);
 	
-	if (x>0){
-		printf("절댓값은 %d입니다.", x);
+	for (i=1; i<=x; i++){
+		sum += i;
 	}
-	else {
-		printf("절댓값은 %d입니다.", -x);
-	}
+	
+	printf("합은 %d", sum);
 	
 	return 0;
 }
