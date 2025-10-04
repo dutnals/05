@@ -5,18 +5,37 @@
 
 int main(int argc, char *argv[]) {
 	
-	int x;
-	int i;
-	int sum=0;
+	int x, y;
+	char op;
+	float result;
 	
-	printf("정수를 입력하세요: ");
-	scanf("%d", &x);
+	printf("계산식을 입력하세요: ");
+	scanf("%d %c %d", &x, &op, &y);
 	
-	for (i=1; i<=x; i++){
-		sum += i;
+	
+	switch(op)
+	{	
+		case '+':
+			result = x+y;
+			break;
+			
+		case '-':
+			result = x-y;
+			break;
+		
+		case '*':
+			result = x*y;
+			break;
+		
+		case '/':
+			result = (float)x/y;
+			break;
+		
+		default:
+			break;
 	}
-	
-	printf("합은 %d", sum);
+
+	printf("결과는 %f", result);
 	
 	return 0;
 }
