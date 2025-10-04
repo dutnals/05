@@ -5,37 +5,24 @@
 
 int main(int argc, char *argv[]) {
 	
-	int x, y;
-	char op;
-	float result;
+	int answer=8;
+	int g;
+	int count=0;
 	
-	printf("계산식을 입력하세요: ");
-	scanf("%d %c %d", &x, &op, &y);
-	
-	
-	switch(op)
-	{	
-		case '+':
-			result = x+y;
-			break;
+	do {
+		printf("숫자를 예측해보세요: ");
+		scanf("%d", &g);
+		
+		if (answer > g)
+			printf("더 큰 숫자를 입력해보세요\n");
 			
-		case '-':
-			result = x-y;
-			break;
+		else if (answer < g)
+			printf("더 작은 숫자를 입력해보세요\n");
 		
-		case '*':
-			result = x*y;
-			break;
-		
-		case '/':
-			result = (float)x/y;
-			break;
-		
-		default:
-			break;
-	}
+		count++;
+	} while (answer != g);
 
-	printf("결과는 %f", result);
+	printf("정답입니다! 시도 횟수는 %d입니다.", count);
 	
 	return 0;
 }
